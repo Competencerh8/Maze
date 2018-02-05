@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+   # -*- coding: utf-8 -*-
 
 
 import pygame
@@ -21,9 +21,7 @@ with open ("labytest.txt", "r") as f:
 
 class Character:
   #Class which define the character by its name and its position.  
-    """Classe définissant une personne caractérisée par :
-    - son nom
-    - sa position"""
+   
 
     
     def __init__(self, name, position,bag):
@@ -41,13 +39,8 @@ McGyver = Character('McGyver', [0,0],0)
 
 class Labyrinthe:
     #class defined by its parameters
-    """Classe définissant un labyrinthe caractérisé par :
-    - sa taille
-    - ses murs et ses vides
-    - son entrée
-    - sa sortie
-    - une (ou plusieurs ?) personnes dedans
-    """
+    #its size, its emptyness, its entrance, its exit, its chararacter.
+   
     
     def __init__(self,size,wall,begin,end,minobject):
         
@@ -74,7 +67,7 @@ class Labyrinthe:
         
         self.minobject = minobject
         
-        L =[] # liste des numéros des cases vides
+        L =[] # list of empty cells
         
         for i in range(size):
             for j in range(size):

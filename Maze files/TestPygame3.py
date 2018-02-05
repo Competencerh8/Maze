@@ -10,8 +10,8 @@ pygame.init()
 
 # Any constants
 size_cell = 50
-width = 15 # nombre de cases
-height = 15 #nombre de cases
+width = 15 # number of cells
+height = 15 #number of cells
 height2 = size_cell * height
 width2 = size_cell * width
 
@@ -43,11 +43,10 @@ lost = False
 game_over = False
 while not game_over :
     
-    #Limitation de vitesse de la boucle
-    #30 frames par secondes pour ne pas 
-    #surcharger le processeur
+    
     pygame.time.Clock().tick(30)
     
+    #essential if we want to close the window by clicking 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:   #essentiel pour que la fenêtre se ferme quand on clique sur la croix dans le coin
             game_over = True
@@ -95,7 +94,7 @@ while not game_over :
     
     
     if(laby.character.position == laby.end and laby.character.bag == laby.minobject):
-        window.blit(text, (160,250))
+        window.blit(text, (60,300))
         
         
     x = laby.character.position[0]
