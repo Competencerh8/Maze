@@ -42,8 +42,8 @@ text4 = font.render("Press enter",1,(0,0,0))
 lost = False
 game_over = False
 while not game_over :
-    
-    
+
+
     pygame.time.Clock().tick(30)
     
     #essential if we want to close the window by clicking 
@@ -56,58 +56,53 @@ while not game_over :
         if event.type == pygame.KEYDOWN:
             
             if((laby.character.position != laby.end or laby.character.bag < laby.minobject) and lost == False):
-            
-            
+
+
                 if event.key == pygame.K_RIGHT:
-                    b = laby.move('d')
+                    b = laby.move('r')
                 
                 elif event.key == pygame.K_LEFT:
-                    b= laby.move('g')
+                    b= laby.move('l')
             
                 elif event.key == pygame.K_UP:
-                    b= laby.move('h')
+                    b= laby.move('t')
               
                 elif event.key == pygame.K_DOWN:
                     b= laby.move('b')
-                
-                
+
+
                 
                 x = laby.character.position[0]
                 y = laby.character.position[1]
                 if laby.wall[x][y] == 'g':
-                    print("On recommence")
+                    print("start again")
                     lost = True
-                
-            
-            
+
+
+
             if event.key == pygame.K_RETURN:
-                print("on recommence")
+                print("start again")
                 lost = False
                 laby = Labyrinthe(15,"labytest.txt",[0,0],[0,14],3)
                 laby._set_character('McGyver')
-                
-                
-    
-    
-    
+
     laby.affiche(window) 
-    
-    
+
+
     if(laby.character.position == laby.end and laby.character.bag == laby.minobject):
         window.blit(text, (60,300))
         
         
     x = laby.character.position[0]
     y = laby.character.position[1]
-    
-    
+
+
     if laby.wall[x][y] == 'g' :
         window.blit(text4, (100,250))
-        
-        
-    
-    pygame.display.flip() 
-    
-    
+
+
+
+    pygame.display.flip()
+
 pygame.quit()
 quit()
